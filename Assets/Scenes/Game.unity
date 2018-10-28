@@ -249,50 +249,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1526229766
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4318831681606618, guid: 3464a517935ab9f40bc547b1534ef56a, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4318831681606618, guid: 3464a517935ab9f40bc547b1534ef56a, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4318831681606618, guid: 3464a517935ab9f40bc547b1534ef56a, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 99.54
-      objectReference: {fileID: 0}
-    - target: {fileID: 4318831681606618, guid: 3464a517935ab9f40bc547b1534ef56a, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4318831681606618, guid: 3464a517935ab9f40bc547b1534ef56a, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4318831681606618, guid: 3464a517935ab9f40bc547b1534ef56a, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4318831681606618, guid: 3464a517935ab9f40bc547b1534ef56a, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4318831681606618, guid: 3464a517935ab9f40bc547b1534ef56a, type: 2}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 3464a517935ab9f40bc547b1534ef56a, type: 2}
-  m_IsPrefabAsset: 0
 --- !u!1 &1650204667
 GameObject:
   m_ObjectHideFlags: 0
@@ -469,4 +427,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   food:
   - {fileID: 1573639324600644, guid: 3464a517935ab9f40bc547b1534ef56a, type: 2}
+  - {fileID: 1944417969425610, guid: 0e9a750c24947ca4ebedb9eab22fe005, type: 2}
   spawnInterval: 5
+  velocity: 5
+  startMin: {x: -10, y: 8, z: 120}
+  startMax: {x: 10, y: 8, z: 120}
+  endMin: {x: -10, y: 8, z: 90}
+  endMax: {x: 10, y: 8, z: 90}
