@@ -427,9 +427,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   food:
   - {fileID: 1573639324600644, guid: 3464a517935ab9f40bc547b1534ef56a, type: 2}
+  - {fileID: 1573639324600644, guid: 3464a517935ab9f40bc547b1534ef56a, type: 2}
+  - {fileID: 1573639324600644, guid: 3464a517935ab9f40bc547b1534ef56a, type: 2}
   - {fileID: 1944417969425610, guid: 0e9a750c24947ca4ebedb9eab22fe005, type: 2}
-  spawnInterval: 5
-  velocity: 5
+  - {fileID: 1701422438435974, guid: a169d5766bf8a4b45a881edd5cb241af, type: 2}
+  - {fileID: 1573639324600644, guid: 3464a517935ab9f40bc547b1534ef56a, type: 2}
+  - {fileID: 1944417969425610, guid: 0e9a750c24947ca4ebedb9eab22fe005, type: 2}
+  - {fileID: 1944417969425610, guid: 0e9a750c24947ca4ebedb9eab22fe005, type: 2}
+  - {fileID: 1944417969425610, guid: 0e9a750c24947ca4ebedb9eab22fe005, type: 2}
+  - {fileID: 1752532292968744, guid: dc9d0e8fad26d86458cedc33f2b900d9, type: 2}
+  spawnInterval: 1
+  velocity: 6
   startMin: {x: -10, y: 8, z: 120}
   startMax: {x: 10, y: 8, z: 120}
   endMin: {x: -10, y: 8, z: 90}
