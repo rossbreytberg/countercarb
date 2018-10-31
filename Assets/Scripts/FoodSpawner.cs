@@ -8,7 +8,15 @@ public class FoodSpawner : MonoBehaviour {
     [SerializeField]
     float spawnInterval;
     [SerializeField]
-    float velocity;
+    float spawnIntervalDecrease;
+    [SerializeField]
+    float spawnIntervalMin;
+    [SerializeField]
+    float speed;
+    [SerializeField]
+    float speedIncrease;
+    [SerializeField]
+    float speedMax;
     [SerializeField]
     Vector3 startMin;
     [SerializeField]
@@ -26,15 +34,17 @@ public class FoodSpawner : MonoBehaviour {
         {
             GameObject spawnedFood = Instantiate(food[spawnIndex]);
             FlyingObject flyingObject = spawnedFood.AddComponent<FlyingObject>();
-            flyingObject.start = getPosition(startMin, startMax);
-            flyingObject.end = getPosition(endMin, endMax);
-            flyingObject.velocity = velocity;
+            flyingObject.start = GetPosition(startMin, startMax);
+            flyingObject.end = GetPosition(endMin, endMax);
+            flyingObject.speed = speed;
             spawnIndex = (spawnIndex + 1) % food.Count;
             timePassed = 0;
+            spawnInterval = Mathf.Max(spawnInterval - spawnIntervalDecrease, spawnIntervalMin);
+            speed = Mathf.Min(speed + speedIncrease, speedMax);
         }
     }
 
-    Vector3 getPosition(Vector3 min, Vector3 max)
+    Vector3 GetPosition(Vector3 min, Vector3 max)
     {
         return new Vector3(
             Random.Range(min.x, max.x),

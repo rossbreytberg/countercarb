@@ -6,7 +6,7 @@ public class FlyingObject : MonoBehaviour {
     
     public Vector3 start;
     public Vector3 end;
-    public float velocity = 1.0f;
+    public float speed = 1.0f;
     float dx;
     float dy;
     float dz;
@@ -14,7 +14,7 @@ public class FlyingObject : MonoBehaviour {
     void Start () {
         transform.position = start;
         Vector3 distance = end - start;
-        float ratio = (velocity / distance.magnitude);
+        float ratio = (speed / distance.magnitude);
         dx = distance.x * ratio;
         dy = distance.y * ratio;
         dz = distance.z * ratio;
