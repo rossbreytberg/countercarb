@@ -122,15 +122,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4749066890369244, guid: 661e6151fe4dce04d8e8429688ed580c, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.476
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4749066890369244, guid: 661e6151fe4dce04d8e8429688ed580c, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 8.62
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4749066890369244, guid: 661e6151fe4dce04d8e8429688ed580c, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 98.96078
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4749066890369244, guid: 661e6151fe4dce04d8e8429688ed580c, type: 2}
       propertyPath: m_LocalRotation.x
@@ -152,6 +152,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114742388489832910, guid: 661e6151fe4dce04d8e8429688ed580c,
+        type: 2}
+      propertyPath: lifeCounter
+      value: 
+      objectReference: {fileID: 913553118}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 661e6151fe4dce04d8e8429688ed580c, type: 2}
   m_IsPrefabAsset: 0
@@ -339,8 +344,8 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 913553114}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.000015733514}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 435896487}
@@ -348,7 +353,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -259, y: -173}
+  m_AnchoredPosition: {x: -259, y: -173.00005}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &913553116
@@ -665,9 +670,9 @@ MonoBehaviour:
   spawnInterval: 4
   spawnIntervalDecrease: 0.3
   spawnIntervalMin: 0.5
-  speed: 0
-  speedIncrease: 0
-  speedMax: 0
+  speed: 5
+  speedIncrease: 0.5
+  speedMax: 20
   startMin: {x: -10, y: 8, z: 120}
   startMax: {x: 10, y: 8, z: 120}
   endMin: {x: -10, y: 8, z: 90}
@@ -734,45 +739,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2077270779 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1597908432889060, guid: 661e6151fe4dce04d8e8429688ed580c,
-    type: 2}
-  m_PrefabInternal: {fileID: 255146492}
---- !u!114 &2077270780
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2077270779}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b57e7f55a0042ad4590dd5dc5c5fe47b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1.5
-  speedIncrease: 0.5
-  speedDecrease: 0.5
-  speedMax: 2.5
-  speedMin: 0.5
-  scale: {x: 1, y: 1, z: 1}
-  scaleIncrease: {x: 0.5, y: 0, z: 0.5}
-  scaleDecrease: {x: 0.5, y: 0, z: 0.5}
-  scaleMax: {x: 2.5, y: 1, z: 2.5}
-  scaleMin: {x: 1, y: 1, z: 1}
-  lifeCounter: {fileID: 913553118}
---- !u!54 &2077270782
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2077270779}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 10
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 1
-  m_Constraints: 112
-  m_CollisionDetection: 2

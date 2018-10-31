@@ -37,6 +37,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4749066890369244}
+  - component: {fileID: 54048472539625262}
+  - component: {fileID: 114742388489832910}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -100,7 +102,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1597908432889060}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.476, y: 8.658921, z: 98.96078}
+  m_LocalPosition: {x: 0, y: 9, z: 100}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4964519184475250}
@@ -261,6 +263,43 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1907134960680592}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &54048472539625262
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1597908432889060}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 10
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_Constraints: 112
+  m_CollisionDetection: 2
+--- !u!114 &114742388489832910
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1597908432889060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b57e7f55a0042ad4590dd5dc5c5fe47b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 30
+  speedIncrease: 10
+  speedDecrease: 10
+  speedMax: 40
+  speedMin: 10
+  scale: {x: 1, y: 1, z: 1}
+  scaleIncrease: {x: 0.3, y: 0, z: 0.3}
+  scaleDecrease: {x: 0.3, y: 0, z: 0.3}
+  scaleMax: {x: 1.9, y: 1, z: 1.9}
+  scaleMin: {x: 0.7, y: 1, z: 0.7}
+  lifeCounter: {fileID: 0}
 --- !u!135 &135322464268672956
 SphereCollider:
   m_ObjectHideFlags: 1

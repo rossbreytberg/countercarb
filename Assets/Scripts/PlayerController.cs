@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 
     [SerializeField]
-    float speed = 1.0f;
+    float speed = 10.0f;
     [SerializeField]
     float speedIncrease;
     [SerializeField]
@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour {
         Vector3 scaleNew = transform.localScale + scaleIncrease;
         transform.localScale = scaleNew.magnitude < scaleMax.magnitude ? scaleNew : scaleMax;
         // Make player slower
-        //speed = Mathf.Max(speed - speedDecrease, speedMin);
+        speed = Mathf.Max(speed - speedDecrease, speedMin);
         // Lose life
         int livesRemaining = lifeCounter.LoseLife();
         if (livesRemaining == 0)
@@ -79,6 +79,6 @@ public class PlayerController : MonoBehaviour {
         Vector3 scaleNew = transform.localScale - scaleDecrease;
         transform.localScale = scaleNew.magnitude > scaleMin.magnitude ? scaleNew : scaleMin;
         // Make player faster
-        //speed = Mathf.Min(speed + speedIncrease, speedMax);
+        speed = Mathf.Min(speed + speedIncrease, speedMax);
     }
 }
