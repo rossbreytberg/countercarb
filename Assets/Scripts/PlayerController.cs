@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
 
@@ -15,6 +16,10 @@ public class PlayerController : MonoBehaviour {
     [SerializeField]
     float speedMin = 1.0f;
     [SerializeField]
+    int pointsPerSecond = 1;
+    [SerializeField]
+    int pointsPerHealthyFood = 10;
+    [SerializeField]
     Vector3 scale = new Vector3(1.0f, 1.0f, 1.0f);
     [SerializeField]
     Vector3 scaleIncrease;
@@ -26,7 +31,13 @@ public class PlayerController : MonoBehaviour {
     Vector3 scaleMin = new Vector3(1.0f, 1.0f, 1.0f);
     [SerializeField]
     LifeCounter lifeCounter;
+    [SerializeField]
+    ScoreCounter scoreCounter;
+    [SerializeField]
+    GameObject tryAgainButton;
     Rigidbody rb;
+    float timePassed = 0;
+
 
     void Start () {
         rb = GetComponent<Rigidbody>();
@@ -34,15 +45,28 @@ public class PlayerController : MonoBehaviour {
     }
 	
     void Update () {
-        rb.AddForce(new Vector3(
-            Input.GetAxis("Horizontal") * speed,
-            0.0f,
-            Input.GetAxis("Vertical") * speed
-        ));
+        if (lifeCounter.GetLifeCount() > 0)
+        {
+            rb.AddForce(new Vector3(
+                Input.GetAxis("Horizontal") * speed,
+                0.0f,
+                Input.GetAxis("Vertical") * speed
+            ));
+        }
+        timePassed += Time.deltaTime;
+        if (timePassed >= 1)
+        {
+            scoreCounter.GainPoints(pointsPerSecond);
+            timePassed = 0;
+        }
     }
 
     void OnCollisionEnter(Collision collision)
     {
+        if (lifeCounter.GetLifeCount() == 0)
+        {
+            return;
+        }
         if (collision.gameObject.name.Contains("Bread") ||
             collision.gameObject.name.Contains("Pizza"))
         {
@@ -68,6 +92,7 @@ public class PlayerController : MonoBehaviour {
         if (livesRemaining == 0)
         {
             transform.localRotation = Quaternion.Euler(new Vector3(90, 0, 0));
+            tryAgainButton.SetActive(true);
         }
     }
 
@@ -80,5 +105,7 @@ public class PlayerController : MonoBehaviour {
         transform.localScale = scaleNew.magnitude > scaleMin.magnitude ? scaleNew : scaleMin;
         // Make player faster
         speed = Mathf.Min(speed + speedIncrease, speedMax);
+        // Gain points
+        scoreCounter.GainPoints(pointsPerHealthyFood);
     }
 }

@@ -13,6 +13,18 @@ public class LifeCounter : MonoBehaviour {
         UpdateLabel();
     }
 
+    public int GetLifeCount()
+    {
+        return lives;
+    }
+
+    public int GainLife()
+    {
+        lives++;
+        UpdateLabel();
+        return lives;
+    }
+
     public int LoseLife()
     {
         lives--;
